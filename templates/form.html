@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<label for="file">Select a file:</label>
+<h1>
+    Image Smoother
+</h1>
     <form action="/smoothimage/" enctype="multipart/form-data" method="post">
+        <label for="file">Select an image:</label>
         <input name="img_file" type="file">
+        <label for="integer">Smoothing radius</label>
         <input name="blur_radius" type="integer" value="1">
         <input type="submit" value="Smooth">
     </form>
+<p></p>
 {{ response }}
