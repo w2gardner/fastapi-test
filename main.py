@@ -8,7 +8,7 @@ app = FastAPI()
 
 
 @app.post("/smoothimage/", response_class=Response)
-def smooth_image(
+async def smooth_image(
         img_file: UploadFile = File(...),
         blur_radius: Optional[int] = Query(1, gt=0)):
     # Open image as PIL Image
