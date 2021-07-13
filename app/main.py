@@ -17,7 +17,7 @@ async def root(request: Request):
 @app.get("/blurimage/")
 async def blur_image_form(request: Request):
     msg = "Load an image and select a blur radius, then click Blur!"
-    return templates.TemplateResponse('blurrer.html', context={'request': request, 'message': msg, 'Result': ""})
+    return templates.TemplateResponse('blurrer.html', context={'request': request, 'message': msg, 'result': ""})
 
 
 @app.post("/blurimage/")
@@ -42,9 +42,9 @@ async def blur_image(
 
 
 @app.get("/findedges/")
-def find_edges_form(request: Request):
+async def find_edges_form(request: Request):
     msg = "Load an image, then click Find Edges!"
-    return templates.TemplateResponse('edge_finder.html', context={'request': request, 'message': msg, 'Result': ""})
+    return templates.TemplateResponse('edge_finder.html', context={'request': request, 'message': msg, 'result': ""})
 
 
 @app.post("/findedges/")
